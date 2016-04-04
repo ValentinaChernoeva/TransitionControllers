@@ -14,6 +14,7 @@
 		A71C6EB91CB21DA900CF6DFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A71C6EB71CB21DA900CF6DFC /* LaunchScreen.storyboard */; };
 		A71C6EC41CB21DA900CF6DFC /* TransitionControllersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A71C6EC31CB21DA900CF6DFC /* TransitionControllersTests.m */; };
 		A71C6ECF1CB21DA900CF6DFC /* TransitionControllersUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A71C6ECE1CB21DA900CF6DFC /* TransitionControllersUITests.m */; };
+		A71C6EDF1CB21E6200CF6DFC /* UIViewController+Storyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = A71C6EDE1CB21E6200CF6DFC /* UIViewController+Storyboard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,9 @@
 		A71C6ECA1CB21DA900CF6DFC /* TransitionControllersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransitionControllersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71C6ECE1CB21DA900CF6DFC /* TransitionControllersUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionControllersUITests.m; sourceTree = "<group>"; };
 		A71C6ED01CB21DA900CF6DFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A71C6EDC1CB21E4A00CF6DFC /* Utilits.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilits.h; sourceTree = "<group>"; };
+		A71C6EDD1CB21E6200CF6DFC /* UIViewController+Storyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Storyboard.h"; sourceTree = "<group>"; };
+		A71C6EDE1CB21E6200CF6DFC /* UIViewController+Storyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Storyboard.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 			children = (
 				A71C6EAC1CB21DA900CF6DFC /* AppDelegate.h */,
 				A71C6EAD1CB21DA900CF6DFC /* AppDelegate.m */,
+				A71C6EE01CB21E6900CF6DFC /* Utilits */,
 				A71C6EB21CB21DA900CF6DFC /* Main.storyboard */,
 				A71C6EB51CB21DA900CF6DFC /* Assets.xcassets */,
 				A71C6EB71CB21DA900CF6DFC /* LaunchScreen.storyboard */,
@@ -133,6 +138,24 @@
 				A71C6ED01CB21DA900CF6DFC /* Info.plist */,
 			);
 			path = TransitionControllersUITests;
+			sourceTree = "<group>";
+		};
+		A71C6EE01CB21E6900CF6DFC /* Utilits */ = {
+			isa = PBXGroup;
+			children = (
+				A71C6EDC1CB21E4A00CF6DFC /* Utilits.h */,
+				A71C6EE11CB21E7700CF6DFC /* Categories */,
+			);
+			name = Utilits;
+			sourceTree = "<group>";
+		};
+		A71C6EE11CB21E7700CF6DFC /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A71C6EDD1CB21E6200CF6DFC /* UIViewController+Storyboard.h */,
+				A71C6EDE1CB21E6200CF6DFC /* UIViewController+Storyboard.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +290,7 @@
 			files = (
 				A71C6EAE1CB21DA900CF6DFC /* AppDelegate.m in Sources */,
 				A71C6EAB1CB21DA900CF6DFC /* main.m in Sources */,
+				A71C6EDF1CB21E6200CF6DFC /* UIViewController+Storyboard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
