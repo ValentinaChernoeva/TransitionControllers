@@ -16,12 +16,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zcA-UA-0cI"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KvE-NX-haa"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PzR-OD-aVT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-93" y="418"/>
+            <point key="canvasLocation" x="-115" y="418"/>
         </scene>
         <!--Main-->
         <scene sceneID="tne-QT-ifu">
@@ -115,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rye-iY-LEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="739" y="418"/>
+            <point key="canvasLocation" x="684" y="418"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7II-1g-IG3">

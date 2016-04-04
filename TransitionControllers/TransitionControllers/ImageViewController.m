@@ -18,5 +18,9 @@
     [super viewDidLoad];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.navigationController.delegate = nil;
+}
 
 @end
