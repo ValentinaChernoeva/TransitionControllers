@@ -13,7 +13,7 @@
 @implementation Animator
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext {
-    return 0.3;
+    return 0.5;
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
@@ -53,17 +53,18 @@
     [containerView addSubview:topSnapshot];
     
     CGFloat scaleValue = CGRectGetHeight(fromViewController.view.bounds) / CGRectGetHeight(fromSnapshot.bounds);
-    CGRect translationRect = CGRectMake(0.f, 0.f, CGRectGetWidth(fromViewController.view.bounds), CGRectGetHeight(fromViewController.view.bounds) - CGRectGetHeight(fromSnapshot.bounds));
+    CGRect translationRect = CGRectMake(0.f, 0.f, CGRectGetWidth(fromViewController.view.bounds), CGRectGetHeight(fromViewController.view.bounds) * 0.66f);
     CGAffineTransform scale = CGAffineTransformMakeScale(scaleValue, scaleValue);
     CGAffineTransform translation = CGAffineTransformMakeTranslation(0.f, CGRectGetMidY(translationRect) - fromView.center.y);
     
-    [UIView animateWithDuration:duration animations:^{
+    [UIView animateWithDuration:duration / 2.f animations:^{
         toViewController.view.alpha = 1.f;
         fromSnapshot.transform = CGAffineTransformConcat(scale, translation);
         topSnapshot.frame = CGRectMake(0.f, CGRectGetHeight(translationRect), CGRectGetWidth(fromViewController.view.bounds), CGRectGetHeight(fromViewController.view.bounds) - CGRectGetHeight(translationRect));
     } completion:^(BOOL finished) {
-        topSnapshot.alpha = 0.f;
-        [UIView animateWithDuration:duration animations:^{
+        
+        [UIView animateWithDuration:duration / 2.f animations:^{
+            topSnapshot.alpha = 0.f;
             fromSnapshot.frame = toView.frame;
         } completion:^(BOOL finished) {
             toView.hidden = NO;

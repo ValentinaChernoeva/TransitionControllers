@@ -118,19 +118,7 @@
                     <view key="view" contentMode="scaleToFill" id="42b-R6-i3v">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ToO-r9-Vf5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <color key="backgroundColor" red="1" green="0.95294117649999999" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ToO-r9-Vf5" firstAttribute="top" secondItem="42b-R6-i3v" secondAttribute="top" id="8Xf-Xw-6Is"/>
-                            <constraint firstAttribute="trailing" secondItem="ToO-r9-Vf5" secondAttribute="trailing" id="Bvs-Un-Ynh"/>
-                            <constraint firstAttribute="bottom" secondItem="ToO-r9-Vf5" secondAttribute="bottom" id="Mra-jH-6xi"/>
-                            <constraint firstItem="ToO-r9-Vf5" firstAttribute="leading" secondItem="42b-R6-i3v" secondAttribute="leading" id="S9p-ZV-xUv"/>
-                        </constraints>
+                        <color key="backgroundColor" red="1" green="0.95294117649999999" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
