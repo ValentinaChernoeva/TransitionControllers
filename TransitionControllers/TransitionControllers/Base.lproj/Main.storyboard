@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-93" y="418"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" sceneMemberID="viewController">
@@ -57,11 +57,17 @@
                             <constraint firstItem="PAn-tB-fXO" firstAttribute="height" secondItem="MEG-hy-se5" secondAttribute="height" multiplier="2:1" id="Y6T-4N-2fj"/>
                             <constraint firstAttribute="trailing" secondItem="PAn-tB-fXO" secondAttribute="trailing" id="fjd-55-xpx"/>
                             <constraint firstAttribute="trailing" secondItem="MEG-hy-se5" secondAttribute="trailing" id="kpU-8H-nlv"/>
+                            <constraint firstItem="MEG-hy-se5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tAi-Tv-ZpE"/>
                             <constraint firstItem="PAn-tB-fXO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xKk-Tn-jz7"/>
                             <constraint firstItem="MEG-hy-se5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xta-pH-Xj0"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4CC-4s-XXY"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="GAI-Ez-aZv"/>
+                    <navigationItem key="navigationItem" title="Main" id="GAI-Ez-aZv"/>
                     <connections>
                         <outlet property="containerView" destination="PAn-tB-fXO" id="Gcd-TD-2fT"/>
                         <outlet property="transitionImageView" destination="MEG-hy-se5" id="eIH-OM-K4S"/>
@@ -118,7 +124,19 @@
                     <view key="view" contentMode="scaleToFill" id="42b-R6-i3v">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.95294117649999999" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2O-hR-bcm">
+                                <rect key="frame" x="141" y="20" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.44705882352941179" green="0.55686274509803924" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="X2O-hR-bcm" firstAttribute="centerX" secondItem="42b-R6-i3v" secondAttribute="centerX" id="aMP-cg-YxX"/>
+                            <constraint firstItem="X2O-hR-bcm" firstAttribute="top" secondItem="42b-R6-i3v" secondAttribute="top" constant="20" id="xn6-di-QMM"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>

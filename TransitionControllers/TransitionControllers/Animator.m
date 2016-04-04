@@ -52,17 +52,11 @@
     [containerView addSubview:fromSnapshot];
     [containerView addSubview:topSnapshot];
     
-    CGFloat scaleValue = CGRectGetHeight(fromViewController.view.bounds) / CGRectGetHeight(fromSnapshot.bounds);
-    CGRect translationRect = CGRectMake(0.f, 0.f, CGRectGetWidth(fromViewController.view.bounds), CGRectGetHeight(fromViewController.view.bounds) * 0.66f);
-    CGAffineTransform scale = CGAffineTransformMakeScale(scaleValue, scaleValue);
-    CGAffineTransform translation = CGAffineTransformMakeTranslation(0.f, CGRectGetMidY(translationRect) - fromView.center.y);
-    
     [UIView animateWithDuration:duration / 2.f animations:^{
         toViewController.view.alpha = 1.f;
-        fromSnapshot.transform = CGAffineTransformConcat(scale, translation);
-        topSnapshot.frame = CGRectMake(0.f, CGRectGetHeight(translationRect), CGRectGetWidth(fromViewController.view.bounds), CGRectGetHeight(fromViewController.view.bounds) - CGRectGetHeight(translationRect));
+        fromSnapshot.transform =  CGAffineTransformMakeScale(3.f, 3.f);
+        topSnapshot.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.f, 0.5f), CGAffineTransformMakeTranslation(0.f, CGRectGetMidY(topSnapshot.bounds)));
     } completion:^(BOOL finished) {
-        
         [UIView animateWithDuration:duration / 2.f animations:^{
             topSnapshot.alpha = 0.f;
             fromSnapshot.frame = toView.frame;
@@ -70,6 +64,7 @@
             toView.hidden = NO;
             fromView.hidden = NO;
             topView.hidden = NO;
+            topSnapshot.transform = CGAffineTransformIdentity;
             fromSnapshot.transform = CGAffineTransformIdentity;
             [fromSnapshot removeFromSuperview];
             [topSnapshot removeFromSuperview];

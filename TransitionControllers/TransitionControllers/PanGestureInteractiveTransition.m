@@ -37,7 +37,8 @@
     if (recognizer.state == UIGestureRecognizerStateBegan) {
             PERFORM_BLOCK_IF_NOT_NIL(self.gestureRecognizedBlock, recognizer);
     } else if (recognizer.state == UIGestureRecognizerStateChanged) {
-        CGFloat d = tranlation.y / CGRectGetHeight(recognizer.view.bounds) * -1;
+        CGFloat d = tranlation.y / CGRectGetHeight(recognizer.view.bounds);
+        NSLog(@"%f", d);
         [self updateInteractiveTransition:d];
     } else if (recognizer.state == UIGestureRecognizerStateEnded) {
         if ([recognizer velocityInView:recognizer.view].y > 0 && location.y > CGRectGetHeight(recognizer.view.bounds) * 0.66f) {
