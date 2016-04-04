@@ -48,8 +48,4 @@
     }
 }
 
-- (void)startInteractiveTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
-    [self.animator animateTransition:transitionContext];
-}
-
 @end

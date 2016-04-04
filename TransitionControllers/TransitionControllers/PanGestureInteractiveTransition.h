@@ -16,7 +16,6 @@ typedef void(^GestureInteractivePanHandler)(UIPanGestureRecognizer *recognizer);
 
 - (instancetype)initWithGestureRecognizerInViewController:(UIViewController *)recognizerVC recognizedBlock:(GestureInteractivePanHandler)gestureRecognizedBlock;
 
-@property (strong, nonatomic) Animator *animator;
 @property (weak, nonatomic) UIViewController *recognizerVC;
 
 @property (copy, nonatomic) GestureInteractivePanHandler gestureRecognizedBlock;

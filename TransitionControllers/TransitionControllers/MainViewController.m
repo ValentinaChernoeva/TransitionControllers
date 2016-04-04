@@ -60,21 +60,21 @@
                                             animationControllerForOperation:(UINavigationControllerOperation)operation
                                                          fromViewController:(UIViewController *)fromVC
                                                            toViewController:(UIViewController *)toVC {
+    
     if (operation == UINavigationControllerOperationPop) {
+        self.isInteractive = NO;
+        if ([fromVC isKindOfClass:[self class]]) {
+           return nil;
+        }
+    } else {
         self.isInteractive = YES;
     }
-    if (operation == UINavigationControllerOperationPop && [fromVC isKindOfClass:[self class]]) {
-        return nil;
-    } else {
-        self.isInteractive = NO;
-        return self.animator;
-    }
+    return self.animator;
 }
 
 - (id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
                           interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController {
-    self.interactiveTransition.animator = animationController;
-    return self.interactiveTransition;
+    return self.isInteractive ? self.interactiveTransition : nil;
 }
 
 
