@@ -24,9 +24,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    __weak typeof(self) wSelf = self;
     self.interactiveTransition = [[PanGestureInteractiveTransition alloc] initWithGestureRecognizerInViewController:self recognizedBlock:^(UIPanGestureRecognizer *recognizer) {
         CGPoint velocity = [recognizer velocityInView:recognizer.view];
         if (velocity.y > 0.f) {
+            wSelf.isInteractive = YES;
             ImageViewController *vc = [ImageViewController instantiateFromMainStoryboard];
             [self.navigationController pushViewController:vc animated:YES];
         }
@@ -50,6 +52,7 @@
 #pragma mark - Actions
 
 - (IBAction)onImageTap:(UITapGestureRecognizer *)sender {
+    self.isInteractive = NO;
     ImageViewController *vc = [ImageViewController instantiateFromMainStoryboard];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -66,8 +69,6 @@
         if ([fromVC isKindOfClass:[self class]]) {
            return nil;
         }
-    } else {
-        self.isInteractive = YES;
     }
     return self.animator;
 }
