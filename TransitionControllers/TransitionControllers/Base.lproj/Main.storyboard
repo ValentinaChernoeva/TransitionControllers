@@ -41,8 +41,12 @@
                                     <segue destination="YF7-g7-qLR" kind="embed" id="mqy-vj-LTc"/>
                                 </connections>
                             </containerView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="animal" translatesAutoresizingMaskIntoConstraints="NO" id="MEG-hy-se5">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="animal" translatesAutoresizingMaskIntoConstraints="NO" id="MEG-hy-se5">
                                 <rect key="frame" x="0.0" y="64" width="320" height="139"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="A1i-uj-Cvu" appends="YES" id="fa7-Ks-Ia7"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -59,10 +63,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="GAI-Ez-aZv"/>
                     <connections>
+                        <outlet property="containerView" destination="PAn-tB-fXO" id="Gcd-TD-2fT"/>
                         <outlet property="transitionImageView" destination="MEG-hy-se5" id="eIH-OM-K4S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="A1i-uj-Cvu">
+                    <connections>
+                        <action selector="onImageTap:" destination="BYZ-38-t0r" id="AcM-2Z-yb6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="315" y="418"/>
         </scene>
@@ -111,7 +121,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ToO-r9-Vf5">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.95294117649999999" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

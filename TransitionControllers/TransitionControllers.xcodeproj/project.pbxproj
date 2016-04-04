@@ -17,6 +17,7 @@
 		A71C6EDF1CB21E6200CF6DFC /* UIViewController+Storyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = A71C6EDE1CB21E6200CF6DFC /* UIViewController+Storyboard.m */; };
 		A71C6EE41CB2221E00CF6DFC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A71C6EE31CB2221E00CF6DFC /* MainViewController.m */; };
 		A71C6EEA1CB2226900CF6DFC /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A71C6EE91CB2226900CF6DFC /* ImageViewController.m */; };
+		A71C6EEE1CB2246B00CF6DFC /* Animator.m in Sources */ = {isa = PBXBuildFile; fileRef = A71C6EED1CB2246B00CF6DFC /* Animator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		A71C6EE31CB2221E00CF6DFC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		A71C6EE81CB2226900CF6DFC /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		A71C6EE91CB2226900CF6DFC /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		A71C6EEC1CB2246B00CF6DFC /* Animator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animator.h; sourceTree = "<group>"; };
+		A71C6EED1CB2246B00CF6DFC /* Animator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,7 @@
 			children = (
 				A71C6EAC1CB21DA900CF6DFC /* AppDelegate.h */,
 				A71C6EAD1CB21DA900CF6DFC /* AppDelegate.m */,
+				A71C6EEF1CB22E7200CF6DFC /* Transition */,
 				A71C6EE01CB21E6900CF6DFC /* Utilits */,
 				A71C6EEB1CB222C400CF6DFC /* ViewControllers */,
 				A71C6EB21CB21DA900CF6DFC /* Main.storyboard */,
@@ -174,6 +178,15 @@
 				A71C6EE91CB2226900CF6DFC /* ImageViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A71C6EEF1CB22E7200CF6DFC /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				A71C6EEC1CB2246B00CF6DFC /* Animator.h */,
+				A71C6EED1CB2246B00CF6DFC /* Animator.m */,
+			);
+			name = Transition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +321,7 @@
 			files = (
 				A71C6EEA1CB2226900CF6DFC /* ImageViewController.m in Sources */,
 				A71C6EAE1CB21DA900CF6DFC /* AppDelegate.m in Sources */,
+				A71C6EEE1CB2246B00CF6DFC /* Animator.m in Sources */,
 				A71C6EAB1CB21DA900CF6DFC /* main.m in Sources */,
 				A71C6EDF1CB21E6200CF6DFC /* UIViewController+Storyboard.m in Sources */,
 				A71C6EE41CB2221E00CF6DFC /* MainViewController.m in Sources */,
