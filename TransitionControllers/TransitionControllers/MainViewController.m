@@ -25,7 +25,7 @@
     [super viewDidLoad];
     
     __weak typeof(self) wSelf = self;
-    self.interactiveTransition = [[PanGestureInteractiveTransition alloc] initWithGestureRecognizerInViewController:self recognizedBlock:^(UIPanGestureRecognizer *recognizer) {
+    self.interactiveTransition = [[PanGestureInteractiveTransition alloc] initWithGestureRecognizerInView:self.transitionView recognizedBlock:^(UIPanGestureRecognizer *recognizer) {
         CGPoint velocity = [recognizer velocityInView:recognizer.view];
         if (velocity.y > 0.f) {
             wSelf.isInteractive = YES;

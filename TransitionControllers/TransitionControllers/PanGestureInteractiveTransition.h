@@ -14,7 +14,7 @@ typedef void(^GestureInteractivePanHandler)(UIPanGestureRecognizer *recognizer);
 
 @interface PanGestureInteractiveTransition : UIPercentDrivenInteractiveTransition
 
-- (instancetype)initWithGestureRecognizerInViewController:(UIViewController *)recognizerVC recognizedBlock:(GestureInteractivePanHandler)gestureRecognizedBlock;
+- (instancetype)initWithGestureRecognizerInView:(UIView *)view recognizedBlock:(GestureInteractivePanHandler)gestureRecognizedBlock;
 
 @property (weak, nonatomic) UIViewController *recognizerVC;
 

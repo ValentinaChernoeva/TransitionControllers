@@ -18,13 +18,12 @@
 
 @implementation PanGestureInteractiveTransition
 
-- (instancetype)initWithGestureRecognizerInViewController:(UIViewController *)recognizerVC recognizedBlock:(GestureInteractivePanHandler)gestureRecognizedBlock {
+- (instancetype)initWithGestureRecognizerInView:(UIView *)view recognizedBlock:(GestureInteractivePanHandler)gestureRecognizedBlock {
     self = [super init];
     if (self) {
         self.gestureRecognizedBlock = gestureRecognizedBlock;
-        self.recognizerVC = recognizerVC;
         UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(gestureHandler:)];
-        [recognizerVC.view addGestureRecognizer:panGesture];
+        [view addGestureRecognizer:panGesture];
     }
     return self;
 }
@@ -42,7 +41,7 @@
             [self updateInteractiveTransition:d];
         }
     } else if (recognizer.state == UIGestureRecognizerStateEnded) {
-        if ([recognizer velocityInView:recognizer.view].y > 0 && location.y > CGRectGetHeight(recognizer.view.bounds) * 0.66f) {
+        if ([recognizer velocityInView:recognizer.view].y > 0 && location.y > CGRectGetHeight(recognizer.view.bounds) / 3.f) {
             [self finishInteractiveTransition];
         } else {
             [self cancelInteractiveTransition];
