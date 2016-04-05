@@ -28,36 +28,36 @@
     [containerView addSubview:toViewController.view];
     toViewController.view.alpha = 0.f;
     
-    UIImageView *transitionImageVew = self.transitionImageView;
-    UIView* transitionView = self.transitionView;
+    UIView *transitionTopView = self.transitionTopView;
+    UIView* transitionBottomView = self.transitionBottomView;
     
-    CGAffineTransform translation = CGAffineTransformMakeTranslation(0.f, CGRectGetHeight(transitionView.bounds));
+    CGAffineTransform translation = CGAffineTransformMakeTranslation(0.f, CGRectGetHeight(transitionBottomView.bounds));
     
     if (self.operation == UINavigationControllerOperationPush) {
         
-        UIView *snapshot = [transitionView snapshotViewAfterScreenUpdates:NO];
-        snapshot.frame = [containerView convertRect:transitionView.frame fromView:transitionView.superview];
+        UIView *snapshot = [transitionBottomView snapshotViewAfterScreenUpdates:NO];
+        snapshot.frame = [containerView convertRect:transitionBottomView.frame fromView:transitionBottomView.superview];
         [containerView addSubview:snapshot];
-        transitionView.hidden = YES;
+        transitionBottomView.hidden = YES;
         
-        CGFloat scaleValue = (2.f * CGRectGetHeight(transitionView.bounds) + CGRectGetHeight(transitionImageVew.bounds)) / CGRectGetHeight(transitionImageVew.bounds);
+        CGFloat scaleValue = (2.f * CGRectGetHeight(transitionBottomView.bounds) + CGRectGetHeight(transitionTopView.bounds)) / CGRectGetHeight(transitionTopView.bounds);
         
         [UIView animateWithDuration:duration animations:^{
             toViewController.view.alpha = 1.f;
-            transitionImageVew.transform = CGAffineTransformMakeScale(scaleValue, scaleValue);
+            transitionTopView.transform = CGAffineTransformMakeScale(scaleValue, scaleValue);
             snapshot.transform = translation;
         } completion:^(BOOL finished) {
-            transitionView.hidden = NO;
+            transitionBottomView.hidden = NO;
             [snapshot removeFromSuperview];
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
         }];
         
     } else if (self.operation == UINavigationControllerOperationPop) {
-        transitionView.transform = translation;
+        transitionBottomView.transform = translation;
         [UIView animateWithDuration:duration animations:^{
             toViewController.view.alpha = 1.f;
-            transitionImageVew.transform = CGAffineTransformIdentity;
-            transitionView.transform = CGAffineTransformIdentity;
+            transitionTopView.transform = CGAffineTransformIdentity;
+            transitionBottomView.transform = CGAffineTransformIdentity;
         } completion:^(BOOL finished) {
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
         }];

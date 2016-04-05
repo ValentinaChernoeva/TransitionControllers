@@ -19,6 +19,7 @@
 		A71C6EEA1CB2226900CF6DFC /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A71C6EE91CB2226900CF6DFC /* ImageViewController.m */; };
 		A71C6EEE1CB2246B00CF6DFC /* Animator.m in Sources */ = {isa = PBXBuildFile; fileRef = A71C6EED1CB2246B00CF6DFC /* Animator.m */; };
 		A71C6EF21CB22F2500CF6DFC /* PanGestureInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A71C6EF11CB22F2500CF6DFC /* PanGestureInteractiveTransition.m */; };
+		A71C6EF81CB3CBC900CF6DFC /* NavigationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A71C6EF71CB3CBC900CF6DFC /* NavigationDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		A71C6EED1CB2246B00CF6DFC /* Animator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animator.m; sourceTree = "<group>"; };
 		A71C6EF01CB22F2500CF6DFC /* PanGestureInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanGestureInteractiveTransition.h; sourceTree = "<group>"; };
 		A71C6EF11CB22F2500CF6DFC /* PanGestureInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanGestureInteractiveTransition.m; sourceTree = "<group>"; };
+		A71C6EF61CB3CBC900CF6DFC /* NavigationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationDelegate.h; sourceTree = "<group>"; };
+		A71C6EF71CB3CBC900CF6DFC /* NavigationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,8 @@
 				A71C6EED1CB2246B00CF6DFC /* Animator.m */,
 				A71C6EF01CB22F2500CF6DFC /* PanGestureInteractiveTransition.h */,
 				A71C6EF11CB22F2500CF6DFC /* PanGestureInteractiveTransition.m */,
+				A71C6EF61CB3CBC900CF6DFC /* NavigationDelegate.h */,
+				A71C6EF71CB3CBC900CF6DFC /* NavigationDelegate.m */,
 			);
 			name = Transition;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 			files = (
 				A71C6EEA1CB2226900CF6DFC /* ImageViewController.m in Sources */,
 				A71C6EAE1CB21DA900CF6DFC /* AppDelegate.m in Sources */,
+				A71C6EF81CB3CBC900CF6DFC /* NavigationDelegate.m in Sources */,
 				A71C6EEE1CB2246B00CF6DFC /* Animator.m in Sources */,
 				A71C6EF21CB22F2500CF6DFC /* PanGestureInteractiveTransition.m in Sources */,
 				A71C6EAB1CB21DA900CF6DFC /* main.m in Sources */,

@@ -13,7 +13,7 @@
 
 @property (assign, nonatomic) UINavigationControllerOperation operation;
 
-@property (strong, nonatomic) UIImageView *transitionImageView;
-@property (strong, nonatomic) UIView *transitionView;
+@property (strong, nonatomic) UIView *transitionTopView;
+@property (strong, nonatomic) UIView *transitionBottomView;
 
 @end

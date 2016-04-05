@@ -10,13 +10,11 @@
 
 @interface ImageViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *transitionImageView;
+
 @end
 
 @implementation ImageViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];

@@ -10,6 +10,4 @@
 
 @interface ImageViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIImageView *transitionImageView;
-
 @end

@@ -9,12 +9,6 @@
 
 #import "PanGestureInteractiveTransition.h"
 #import "Utilits.h"
-#import "Animator.h"
-
-@interface PanGestureInteractiveTransition ()
-
-@end
-
 
 @implementation PanGestureInteractiveTransition
 
