@@ -28,26 +28,36 @@
     [containerView addSubview:toViewController.view];
     toViewController.view.alpha = 0.f;
     
-    UIImageView *imageVew = self.transitionImageView;
-    UIView* view = self.transitionView;
+    UIImageView *transitionImageVew = self.transitionImageView;
+    UIView* transitionView = self.transitionView;
+    
+    CGAffineTransform translation = CGAffineTransformMakeTranslation(0.f, CGRectGetHeight(transitionView.bounds));
     
     if (self.operation == UINavigationControllerOperationPush) {
- 
-        CGFloat scaleValue = (2.f * CGRectGetHeight(view.bounds) + CGRectGetHeight(imageVew.bounds)) / CGRectGetHeight(imageVew.bounds);
+        
+        UIView *snapshot = [transitionView snapshotViewAfterScreenUpdates:NO];
+        snapshot.frame = [containerView convertRect:transitionView.frame fromView:transitionView.superview];
+        [containerView addSubview:snapshot];
+        transitionView.hidden = YES;
+        
+        CGFloat scaleValue = (2.f * CGRectGetHeight(transitionView.bounds) + CGRectGetHeight(transitionImageVew.bounds)) / CGRectGetHeight(transitionImageVew.bounds);
         
         [UIView animateWithDuration:duration animations:^{
             toViewController.view.alpha = 1.f;
-            imageVew.transform = CGAffineTransformMakeScale(scaleValue, scaleValue);
-            view.transform = CGAffineTransformMakeTranslation(0.f, CGRectGetHeight(view.bounds));
+            transitionImageVew.transform = CGAffineTransformMakeScale(scaleValue, scaleValue);
+            snapshot.transform = translation;
         } completion:^(BOOL finished) {
+            transitionView.hidden = NO;
+            [snapshot removeFromSuperview];
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
         }];
         
     } else if (self.operation == UINavigationControllerOperationPop) {
+        transitionView.transform = translation;
         [UIView animateWithDuration:duration animations:^{
             toViewController.view.alpha = 1.f;
-            imageVew.transform = CGAffineTransformIdentity;
-            view.transform = CGAffineTransformIdentity;
+            transitionImageVew.transform = CGAffineTransformIdentity;
+            transitionView.transform = CGAffineTransformIdentity;
         } completion:^(BOOL finished) {
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
         }];
