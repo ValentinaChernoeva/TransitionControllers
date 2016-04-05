@@ -38,13 +38,17 @@
         PERFORM_BLOCK_IF_NOT_NIL(self.gestureRecognizedBlock, recognizer);
     } else if (recognizer.state == UIGestureRecognizerStateChanged) {
         CGFloat d = tranlation.y / CGRectGetHeight(recognizer.view.bounds);
-        [self updateInteractiveTransition:d];
+        if (d > 0) {
+            [self updateInteractiveTransition:d];
+        }
     } else if (recognizer.state == UIGestureRecognizerStateEnded) {
         if ([recognizer velocityInView:recognizer.view].y > 0 && location.y > CGRectGetHeight(recognizer.view.bounds) * 0.66f) {
             [self finishInteractiveTransition];
         } else {
             [self cancelInteractiveTransition];
         }
+    }  else if (recognizer.state == UIGestureRecognizerStateCancelled) {
+        [self cancelInteractiveTransition];
     }
 }
 

@@ -35,42 +35,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAn-tB-fXO">
-                                <rect key="frame" x="0.0" y="203" width="320" height="277"/>
-                                <connections>
-                                    <segue destination="YF7-g7-qLR" kind="embed" id="mqy-vj-LTc"/>
-                                </connections>
-                            </containerView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="animal" translatesAutoresizingMaskIntoConstraints="NO" id="MEG-hy-se5">
-                                <rect key="frame" x="0.0" y="64" width="320" height="139"/>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="celebrate" translatesAutoresizingMaskIntoConstraints="NO" id="MEG-hy-se5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="A1i-uj-Cvu" appends="YES" id="fa7-Ks-Ia7"/>
                                 </connections>
                             </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAn-tB-fXO">
+                                <rect key="frame" x="0.0" y="160" width="320" height="320"/>
+                                <connections>
+                                    <segue destination="YF7-g7-qLR" kind="embed" id="mqy-vj-LTc"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MEG-hy-se5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="4CC-4s-XXY"/>
-                            <constraint firstItem="PAn-tB-fXO" firstAttribute="top" secondItem="MEG-hy-se5" secondAttribute="bottom" id="BXe-ej-MRZ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PAn-tB-fXO" secondAttribute="bottom" id="IYv-Av-31e"/>
-                            <constraint firstItem="PAn-tB-fXO" firstAttribute="height" secondItem="MEG-hy-se5" secondAttribute="height" multiplier="2:1" id="Y6T-4N-2fj"/>
-                            <constraint firstAttribute="trailing" secondItem="PAn-tB-fXO" secondAttribute="trailing" id="fjd-55-xpx"/>
-                            <constraint firstAttribute="trailing" secondItem="MEG-hy-se5" secondAttribute="trailing" id="kpU-8H-nlv"/>
-                            <constraint firstItem="MEG-hy-se5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tAi-Tv-ZpE"/>
-                            <constraint firstItem="PAn-tB-fXO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xKk-Tn-jz7"/>
-                            <constraint firstItem="MEG-hy-se5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xta-pH-Xj0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PAn-tB-fXO" secondAttribute="bottom" id="4jI-pL-vlY"/>
+                            <constraint firstItem="PAn-tB-fXO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AN7-Bx-Y7T"/>
+                            <constraint firstAttribute="trailing" secondItem="PAn-tB-fXO" secondAttribute="trailing" id="BaH-zN-UcH"/>
+                            <constraint firstItem="MEG-hy-se5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DNj-sM-6xq"/>
+                            <constraint firstItem="MEG-hy-se5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="UEb-eh-lg3"/>
+                            <constraint firstItem="PAn-tB-fXO" firstAttribute="top" secondItem="MEG-hy-se5" secondAttribute="bottom" id="Zgn-am-xP1"/>
+                            <constraint firstItem="PAn-tB-fXO" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="2:3" id="s5y-XM-Q7t"/>
+                            <constraint firstAttribute="trailing" secondItem="MEG-hy-se5" secondAttribute="trailing" id="tkA-RA-cmq"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="4CC-4s-XXY"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Main" id="GAI-Ez-aZv"/>
                     <connections>
-                        <outlet property="containerView" destination="PAn-tB-fXO" id="Gcd-TD-2fT"/>
                         <outlet property="transitionImageView" destination="MEG-hy-se5" id="eIH-OM-K4S"/>
+                        <outlet property="transitionView" destination="PAn-tB-fXO" id="CAR-0d-N4B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -94,18 +88,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="animal" translatesAutoresizingMaskIntoConstraints="NO" id="ds4-UO-mAT">
-                                <rect key="frame" x="0.0" y="145" width="320" height="189"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="189" id="SrF-rh-niC"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="celebrate" translatesAutoresizingMaskIntoConstraints="NO" id="ds4-UO-mAT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ds4-UO-mAT" firstAttribute="leading" secondItem="HvM-sb-1x4" secondAttribute="leading" id="Nwk-6Q-EQL"/>
-                            <constraint firstItem="ds4-UO-mAT" firstAttribute="centerY" secondItem="HvM-sb-1x4" secondAttribute="centerY" id="R0R-oQ-9bl"/>
-                            <constraint firstAttribute="trailing" secondItem="ds4-UO-mAT" secondAttribute="trailing" id="eNW-76-ucz"/>
+                            <constraint firstItem="ds4-UO-mAT" firstAttribute="leading" secondItem="HvM-sb-1x4" secondAttribute="leading" id="0Dw-ZD-Rde"/>
+                            <constraint firstItem="ds4-UO-mAT" firstAttribute="top" secondItem="HvM-sb-1x4" secondAttribute="top" id="4i2-et-GmO"/>
+                            <constraint firstItem="CvU-Mn-mrY" firstAttribute="top" secondItem="ds4-UO-mAT" secondAttribute="bottom" id="dYF-sQ-gxD"/>
+                            <constraint firstAttribute="trailing" secondItem="ds4-UO-mAT" secondAttribute="trailing" id="tvn-uO-2bg"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -115,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rye-iY-LEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="684" y="418"/>
+            <point key="canvasLocation" x="685" y="418"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7II-1g-IG3">
@@ -125,17 +117,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2O-hR-bcm">
-                                <rect key="frame" x="141" y="20" width="39" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Csa-Mm-eps">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.44705882352941179" green="0.55686274509803924" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="X2O-hR-bcm" firstAttribute="centerX" secondItem="42b-R6-i3v" secondAttribute="centerX" id="aMP-cg-YxX"/>
-                            <constraint firstItem="X2O-hR-bcm" firstAttribute="top" secondItem="42b-R6-i3v" secondAttribute="top" constant="20" id="xn6-di-QMM"/>
+                            <constraint firstAttribute="trailing" secondItem="Csa-Mm-eps" secondAttribute="trailing" id="E4r-ap-hlM"/>
+                            <constraint firstItem="Csa-Mm-eps" firstAttribute="leading" secondItem="42b-R6-i3v" secondAttribute="leading" id="IfR-p5-fKW"/>
+                            <constraint firstItem="Csa-Mm-eps" firstAttribute="top" secondItem="42b-R6-i3v" secondAttribute="top" id="bhc-KJ-pOF"/>
+                            <constraint firstAttribute="bottom" secondItem="Csa-Mm-eps" secondAttribute="bottom" id="mMr-Kt-Qcj"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -146,6 +138,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="animal" width="1920" height="1080"/>
+        <image name="celebrate" width="1024" height="819"/>
     </resources>
 </document>

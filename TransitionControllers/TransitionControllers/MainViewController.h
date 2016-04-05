@@ -11,6 +11,6 @@
 @interface MainViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *transitionImageView;
-@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIView *transitionView;
 
 @end

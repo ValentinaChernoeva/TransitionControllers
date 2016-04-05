@@ -63,6 +63,10 @@
                                             animationControllerForOperation:(UINavigationControllerOperation)operation
                                                          fromViewController:(UIViewController *)fromVC
                                                            toViewController:(UIViewController *)toVC {
+    Animator *animator = [[Animator alloc] init];
+    animator.transitionImageView = self.transitionImageView;
+    animator.transitionView = self.transitionView;
+    animator.operation = operation;
     
     if (operation == UINavigationControllerOperationPop) {
         self.isInteractive = NO;
@@ -70,7 +74,7 @@
            return nil;
         }
     }
-    return self.animator;
+    return animator;
 }
 
 - (id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController

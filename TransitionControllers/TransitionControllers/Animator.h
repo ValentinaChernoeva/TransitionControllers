@@ -11,4 +11,9 @@
 
 @interface Animator : NSObject <UIViewControllerAnimatedTransitioning>
 
+@property (assign, nonatomic) UINavigationControllerOperation operation;
+
+@property (strong, nonatomic) UIImageView *transitionImageView;
+@property (strong, nonatomic) UIView *transitionView;
+
 @end
