@@ -18,8 +18,7 @@
 		A71C6EE41CB2221E00CF6DFC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A71C6EE31CB2221E00CF6DFC /* MainViewController.m */; };
 		A71C6EEA1CB2226900CF6DFC /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A71C6EE91CB2226900CF6DFC /* ImageViewController.m */; };
 		A71C6EEE1CB2246B00CF6DFC /* Animator.m in Sources */ = {isa = PBXBuildFile; fileRef = A71C6EED1CB2246B00CF6DFC /* Animator.m */; };
-		A71C6EF21CB22F2500CF6DFC /* PanGestureInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A71C6EF11CB22F2500CF6DFC /* PanGestureInteractiveTransition.m */; };
-		A71C6EF81CB3CBC900CF6DFC /* NavigationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A71C6EF71CB3CBC900CF6DFC /* NavigationDelegate.m */; };
+		A78FDB151CB4D5F10021ED2D /* InteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A78FDB141CB4D5F10021ED2D /* InteractiveTransition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,10 +62,8 @@
 		A71C6EE91CB2226900CF6DFC /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		A71C6EEC1CB2246B00CF6DFC /* Animator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animator.h; sourceTree = "<group>"; };
 		A71C6EED1CB2246B00CF6DFC /* Animator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animator.m; sourceTree = "<group>"; };
-		A71C6EF01CB22F2500CF6DFC /* PanGestureInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanGestureInteractiveTransition.h; sourceTree = "<group>"; };
-		A71C6EF11CB22F2500CF6DFC /* PanGestureInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanGestureInteractiveTransition.m; sourceTree = "<group>"; };
-		A71C6EF61CB3CBC900CF6DFC /* NavigationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationDelegate.h; sourceTree = "<group>"; };
-		A71C6EF71CB3CBC900CF6DFC /* NavigationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationDelegate.m; sourceTree = "<group>"; };
+		A78FDB131CB4D5F10021ED2D /* InteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractiveTransition.h; sourceTree = "<group>"; };
+		A78FDB141CB4D5F10021ED2D /* InteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractiveTransition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,10 +188,8 @@
 			children = (
 				A71C6EEC1CB2246B00CF6DFC /* Animator.h */,
 				A71C6EED1CB2246B00CF6DFC /* Animator.m */,
-				A71C6EF01CB22F2500CF6DFC /* PanGestureInteractiveTransition.h */,
-				A71C6EF11CB22F2500CF6DFC /* PanGestureInteractiveTransition.m */,
-				A71C6EF61CB3CBC900CF6DFC /* NavigationDelegate.h */,
-				A71C6EF71CB3CBC900CF6DFC /* NavigationDelegate.m */,
+				A78FDB131CB4D5F10021ED2D /* InteractiveTransition.h */,
+				A78FDB141CB4D5F10021ED2D /* InteractiveTransition.m */,
 			);
 			name = Transition;
 			sourceTree = "<group>";
@@ -331,9 +326,8 @@
 			files = (
 				A71C6EEA1CB2226900CF6DFC /* ImageViewController.m in Sources */,
 				A71C6EAE1CB21DA900CF6DFC /* AppDelegate.m in Sources */,
-				A71C6EF81CB3CBC900CF6DFC /* NavigationDelegate.m in Sources */,
 				A71C6EEE1CB2246B00CF6DFC /* Animator.m in Sources */,
-				A71C6EF21CB22F2500CF6DFC /* PanGestureInteractiveTransition.m in Sources */,
+				A78FDB151CB4D5F10021ED2D /* InteractiveTransition.m in Sources */,
 				A71C6EAB1CB21DA900CF6DFC /* main.m in Sources */,
 				A71C6EDF1CB21E6200CF6DFC /* UIViewController+Storyboard.m in Sources */,
 				A71C6EE41CB2221E00CF6DFC /* MainViewController.m in Sources */,
@@ -560,6 +554,7 @@
 				A71C6ED51CB21DA900CF6DFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A71C6ED61CB21DA900CF6DFC /* Build configuration list for PBXNativeTarget "TransitionControllersTests" */ = {
 			isa = XCConfigurationList;
@@ -568,6 +563,7 @@
 				A71C6ED81CB21DA900CF6DFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A71C6ED91CB21DA900CF6DFC /* Build configuration list for PBXNativeTarget "TransitionControllersUITests" */ = {
 			isa = XCConfigurationList;
@@ -576,6 +572,7 @@
 				A71C6EDB1CB21DA900CF6DFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

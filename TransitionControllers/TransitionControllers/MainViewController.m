@@ -7,16 +7,18 @@
 //
 
 #import "MainViewController.h"
+#import "Animator.h"
 #import "ImageViewController.h"
+#import "InteractiveTransition.h"
 #import "UIViewController+Storyboard.h"
-#import "NavigationDelegate.h"
 
-@interface MainViewController () <TransitionProtocol>
+
+@interface MainViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *transitionImageView;
 @property (weak, nonatomic) IBOutlet UIView *transitionView;
 
-@property (strong, nonatomic) NavigationDelegate *navigationDelegat;
+@property (strong, nonatomic) InteractiveTransition *interactiveTransition;
 
 @end
 
@@ -24,12 +26,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationDelegat = [[NavigationDelegate alloc] initWithViewController:self];
+    Animator *animator = [[Animator alloc] init];
+    animator.transitionTopView = self.transitionImageView;
+    animator.transitionBottomView = self.transitionView;
+    __weak typeof(self) wSelf = self;
+    self.interactiveTransition = [[InteractiveTransition alloc] initWithGestureRecognizerInView:self.transitionView animator:animator recognizedBlock:^(UIPanGestureRecognizer *recognizer) {
+        ImageViewController *vc = [ImageViewController instantiateFromMainStoryboard];
+        [wSelf.navigationController pushViewController:vc animated:YES];
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self.navigationController.delegate = self.navigationDelegat;
+    self.navigationController.delegate = self.interactiveTransition;
 }
 
 #pragma mark - Actions
@@ -39,16 +48,5 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-#pragma mark - TransitionProtocol
-
-- (UIView *)transitionTopView {
-    return self.transitionImageView;
-}
-- (UIView *)transitionBottomView {
-    return self.transitionView;
-}
-- (UIViewController *)destanationViewController {
-    return  [ImageViewController instantiateFromMainStoryboard];
-}
 
 @end
